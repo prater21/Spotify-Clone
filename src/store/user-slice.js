@@ -9,6 +9,7 @@ const userSlice = createSlice({
         name: null,
         playlists: [],
         playlist: null,
+        playlistId: null,
         playlistTitle: null,
         token: null,
         avaliableDevice: null,
@@ -31,6 +32,9 @@ const userSlice = createSlice({
         },
         setPlaylist(state, action) {
             state.playlist = action.payload.playlist;
+        },
+        setPlaylistId(state, action) {
+            state.playlistId = action.payload.playlistId;
         },
         setPlaylistTitle(state, action) {
             state.playlistTitle = action.payload.playlistTitle;

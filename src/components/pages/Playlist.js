@@ -14,7 +14,7 @@ const Playlist = () => {
             spotify.getPlaylistTracks(playlistId)
                 .then(data => {
                     dispatch(userActions.setPlaylist({ playlist: data.body.items }))
-                    dispatch(userActions.serPlaylistId({ playlistId }))
+                    dispatch(userActions.setPlaylistId({ playlistId }))
                 })
         }
 
