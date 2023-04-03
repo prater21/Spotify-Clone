@@ -1,0 +1,141 @@
+.playlist__top{
+    height: 280px;
+    padding: 90px 0 0px 50px;
+    display: flex;
+}
+
+.playlist__img{
+    width: 250px;
+    height: 250px;
+}
+
+.playlist__description{
+    margin: auto 0 40px 20px;
+    color: white;
+}
+
+.playlist__description p{
+    margin: 10px 0 0 0;
+    width: 300px;
+
+}
+
+.playlist__title{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.playlist__border{
+    height: 30px;
+    padding: 10px 30px;
+    display: flex;
+    color: rgb(152, 152, 152);
+}
+
+.playlist__hr {
+  border: 1px solid #7b7b7b;
+  width: 95%;
+  margin: 10px auto;
+}
+.playlist__trackImg{
+    width: 50px;
+    height: 50px;
+}
+.playlist__tracks{
+   padding: 0 10px;
+   color: rgb(152, 152, 152);
+}
+
+.playlist__track{
+    display: flex;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.playlist__track:hover{
+    background-color: #7b7b7b;
+    color: white;
+    
+}
+
+.playlist__trackNumber,
+.playlist__titleIcon{
+    width: 20px;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+.playlist__trackTitle,
+.playlist__titleTitle{
+    height: 50px;
+    display: flex;
+    width: 700px;
+    min-width: 200px;
+}
+
+.playlist__trackName{
+    margin: 0 10px;
+    height: 50px;
+
+}
+.playlist__trackName p{
+    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+.playlist__artistName{
+    list-style: none;
+    padding:  0;
+    width: 30vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+     
+}
+.playlist__artistName>li{
+    padding: 0;
+    display: inline;
+}
+
+.playlist__artistName li:not(:last-child):after {  
+    content: ", ";
+}
+
+.playlist__trackAlbum,
+.playlist__titleAlbum{
+    width: 450px;
+}
+
+.playlist__trackAddedDate,
+.playlist__titleAddedDate{
+    width: 150px;
+    margin-left: 50px;
+}
+.playlist__trackDuration,
+.playlist__titleDuration{
+    width: 80px;
+    margin-left: auto;
+    /* margin-right: 20px; */
+}
+
+
+ @media (max-width: 1400px) {
+    .playlist__trackAddedDate,
+    .playlist__titleAddedDate,
+    .playlist__trackDuration,
+    .playlist__titleDuration  {
+        display: none;
+  }
+}
+
+ @media (max-width: 1000px) {
+    .playlist__trackAlbum,
+    .playlist__titleAlbum{ 
+        display: none;
+  }
+  .playlist__artistName{
+    width: 45vw;
+}
+}

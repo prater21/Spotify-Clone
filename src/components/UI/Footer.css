@@ -1,0 +1,122 @@
+.footer{
+    position: fixed;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #1e1d1d;
+    padding: 20px;
+}
+
+.footer__left{
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.footer__albumImg{
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+.footer__center{
+    flex: 0.4;
+    max-width: 300px;
+    padding: 0 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.footer__icon{
+  margin-left: auto;
+}
+
+.footer__icon:hover{
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.5) !important;
+}
+
+
+.footer__right{ 
+    flex: 0.3;
+    color: white;
+    margin-left: 30px;
+}
+.footer__volume{
+  position: relative;
+    display: flex;
+    width: 230px;
+    gap: 20px;
+    margin-left: auto;
+    margin-right: 60px;
+}
+
+.footer__songInfo h4 {
+  margin-bottom: 5px;
+    width: 220px;
+}
+
+.footer__songInfo p {
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+.footer__devices{
+  position: absolute;
+  left: -110px;
+  bottom: 50px;
+  background-color: rgb(51, 51, 51);
+  border-radius: 5px;
+  width: 250px;
+  height: 200px;
+  display: none;
+}
+
+.footer__devices:before {
+  content: "";
+  left: 110px;
+  bottom: -10px;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  box-shadow: 0 1px 14px rgba(0,0,0,.2);
+  background: rgb(51, 51, 51);
+  position: absolute;
+  z-index: -1;
+}
+.footer__devices hr{
+  width: 80%;
+  border: 1px solid #7b7b7b;
+}
+
+.footer__deviceTitle{
+  text-align: center;
+}
+.footer__device{
+  list-style: none;
+  text-align: center ;
+  margin: 15px;
+  cursor: pointer;
+}
+
+ @media (max-width: 1000px) {
+    .footer__center{
+        display: none;
+    }
+    .footer__left{
+      flex: 0.6;
+    }
+  .footer__right{
+    flex: 0.4;
+  }
+}

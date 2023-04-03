@@ -1,0 +1,63 @@
+.sidebar{
+    height: 100vh;
+    color: white;
+    width: 250px;
+    background-color: #040404;
+    position: fixed;
+}
+
+.sidebar__logo{
+    height: 70px;
+    padding: 10px;
+  /*  object-fit: contain;  이미지 비율 유지 */
+    cursor: pointer;
+}
+
+.sidebar__menu{
+    text-decoration: none;
+    display: flex;
+    height: 40px;
+    margin: 0;
+    cursor: pointer;
+    align-items: center;
+    transition: 150ms color ease-in;
+    padding-left: 30px;
+    color: grey;
+}
+
+
+.sidebar__menu:hover{
+    color: white;
+}
+
+.active{
+    color: white;
+}
+
+.sidebar > hr {
+  border: 1px solid #282828;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.sidebar__title {
+  margin-left: 15px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+
+.sidebar_playlist{
+  list-style: none;
+  margin: 20px 0;
+}
+
+.sidebar_playlist a{
+  text-decoration: none;
+  color: rgb(159, 159, 159);
+}
+
+.sidebar_playlist a.active,
+.sidebar_playlist a:hover{
+  color: white;
+}
