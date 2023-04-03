@@ -12,7 +12,7 @@ import { userActions } from './store/user-slice';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/Spotify-Clone/' element={<Layout />}>
+    <Route path='Spotify-Clone/' element={<Layout />}>
       <Route index element={<HomePage />} />
       <Route path='playlist/:playlistId' element={<Playlist />} />
       {/* <Route path='*' element={<HomePage />} /> */}
