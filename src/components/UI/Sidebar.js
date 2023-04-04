@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { userActions } from "../../store/user-slice";
 import "./Sidebar.css"
 
@@ -7,18 +7,13 @@ import "./Sidebar.css"
 const Sidebar = () => {
     const playlists = useSelector(state => state.user.playlists);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const onPlaylistTitleHandler = (title) => {
         dispatch(userActions.setPlaylistTitle({ playlistTitle: title }))
     }
 
-    const imgClickHandler = () => {
-        navigate('/');
-    }
     return (
         <div className="sidebar">
             <img className="sidebar__logo"
-                onClick={imgClickHandler}
                 src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
                 alt="" />
             <NavLink to="/"

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import './App.css';
 import { getTokenFromUrl, spotify } from './components/config/spotify';
-import HomePage from './components/pages/Home';
 import Playlist from './components/pages/Playlist';
 import Layout from './components/UI/Layout';
 import Login from './components/UI/Login';
@@ -13,9 +12,7 @@ import { userActions } from './store/user-slice';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='Spotify-Clone/' element={<Layout />}>
-      <Route index element={<HomePage />} />
       <Route path='playlist/:playlistId' element={<Playlist />} />
-      {/* <Route path='*' element={<HomePage />} /> */}
     </Route>
   )
 )
@@ -59,7 +56,20 @@ function App() {
         .then(data => {
           dispatch(userActions.setPlaylists({ playlists: data.body.items }));
         })
-
+      //set shuffle false
+      spotify.setShuffle(false)
+        .then(function () {
+          console.log('Shuffle is off.');
+        }, function (err) {
+          console.log('Something went wrong!', err);
+        });
+      //set repeat context
+      spotify.setRepeat('context')
+        .then(function () {
+          console.log('Repeat context.');
+        }, function (err) {
+          console.log('Something went wrong!', err);
+        });
 
     }
   }, [dispatch]);
