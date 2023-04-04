@@ -16,10 +16,7 @@ const Sidebar = () => {
             <img className="sidebar__logo"
                 src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
                 alt="" />
-            <NavLink to="/"
-                className={({ isActive }) => (isActive ? "sidebar__menu active" : "sidebar__menu")}>
-                Home
-            </NavLink>
+            <p className="sidebar__menu">Home</p>
             <p className="sidebar__menu">Search</p>
             <p className="sidebar__menu">Library</p>
             <br></br>
