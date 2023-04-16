@@ -11,10 +11,10 @@ import { userActions } from './store/user-slice';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='Spotify-Clone/' element={<Layout />}>
+    <Route path='/' element={<Layout />}>
       <Route path='playlist/:playlistId' element={<Playlist />} />
     </Route>
-  )
+  ), { basename: "/Spotify-Clone" }
 )
 
 
@@ -81,7 +81,6 @@ function App() {
           <RouterProvider router={router} />
           : <Login />
       }
-
     </>
   )
 }
