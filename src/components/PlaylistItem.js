@@ -9,23 +9,24 @@ const PlaylistItem = () => {
     const playlistTitle = useSelector(state => state.user.playlistTitle);
     const nowDevice = useSelector(state => state.user.nowDevice)
     const playlistId = useSelector(state => state.user.playlistId)
-
     const [imgSrc, setImgSrc] = useState("");
     const dispatch = useDispatch();
 
     const onTrackClickHandler = (track, index) => {
-        dispatch(userActions.setNowSong({ nowSong: track }))
-        dispatch(userActions.setIndex({ index: index }));
+        dispatch(userActions.setNowSong({ nowSong: track })) //set now playing song
+        dispatch(userActions.setIndex({ index: index })); //set index of song
 
+        //play song
         spotify.play({ context_uri: `spotify:playlist:${playlistId}`, offset: { position: index }, device_id: nowDevice })
             .then(function () {
-                console.log('Playback paused');
+                console.log('Play song');
             }, function (err) {
-                console.log('Something went wrong!', err);
+                console.log('play Error', err);
             });
     }
 
     useEffect(() => {
+        //set playlist top image src
         if (playlist) {
             const src = playlist[0].track.album.images.length ? playlist[0].track.album.images[0].url : "";
             setImgSrc(src);
@@ -35,7 +36,7 @@ const PlaylistItem = () => {
 
     return <>
         <div className="playlist__top" >
-            <img className="playlist__img" alt='' src={imgSrc} />
+            <img className="playlist__img" alt="playlist top img" src={imgSrc} />
             <div className="playlist__description">
                 <p>플레이리스트</p>
                 <p className="playlist__title">{playlistTitle}</p>

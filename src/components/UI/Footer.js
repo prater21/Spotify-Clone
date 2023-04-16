@@ -24,32 +24,37 @@ const Footer = () => {
 
     const dispatch = useDispatch();
 
+    //pause handler
     const pauseHandler = () => {
         spotify.pause()
             .then(function () {
-                console.log('Playback paused');
+                // console.log('Footer pause btn');
             }, function (err) {
-                console.log('Something went wrong!', err);
+                console.log('footer pause handler Error', err);
             });
         setPlaying(prev => { return !prev });
     }
+
+    //play handler
     const playHandler = () => {
         spotify.play()
             .then(function () {
-                console.log('Playback paused');
+                // console.log('Footer play btn');
             }, function (err) {
-                console.log('Something went wrong!', err);
+                console.log('footer play handler Error', err);
             });
         setPlaying(prev => { return !prev });
     }
+
+    //skip to previous song
     const toPrevHandler = () => {
         spotify.skipToPrevious()
             .then(function () {
-                console.log('Skip to previous');
+                // console.log('Skip to previous');
             }, function (err) {
-                console.log('Something went wrong!', err);
-
+                console.log('Skip to previous Error', err);
             });
+
         let _index = index - 1;
         if (_index < 0) {
             dispatch(userActions.setIndex({ index: playlist.length - 1 }));
@@ -60,15 +65,16 @@ const Footer = () => {
         dispatch(userActions.setNowSong({ nowSong: playlist[_index].track }))
 
     }
-    const toNextHandler = () => {
 
+    //skip to next song
+    const toNextHandler = () => {
         spotify.skipToNext()
             .then(function () {
-                console.log('Skip to next');
-
+                // console.log('Skip to next');
             }, function (err) {
-                console.log('Something went wrong!', err);
+                console.log('Skip to next Error', err);
             });
+
         let _index = index + 1;
         if (_index >= playlist.length) {
             dispatch(userActions.setIndex({ index: 0 }));
@@ -77,30 +83,30 @@ const Footer = () => {
         else
             dispatch(userActions.setIndex({ index: _index }));
         dispatch(userActions.setNowSong({ nowSong: playlist[_index].track }))
-
-
     }
 
+    //set device volume, but doesn't work apple device
     const volumeControlHandler = (e) => {
         setVolume(e.target.value);
-        spotify.setVolume(parseInt(e.target.value), { device_id: "4dcebde00a6722e1300dc8e5fa326741335094a7" })
+        spotify.setVolume(parseInt(e.target.value))
             .then(function () {
-                console.log('Setting volume to 50.');
+                // console.log('Setting volume');
             }, function (err) {
-                //if the user making the request is non-premium, a 403 FORBIDDEN response code will be returned
-                console.log('Something went wrong!', err);
+                console.log('Setting volume Error', err);
             });
     }
+    //show available devices
     const onPopoverHandler = () => {
         setPopOver(prev => { return !prev });
     }
+    //change device handler
     const deviceChangeHandler = (id) => {
         dispatch(userActions.setNowDevice({ nowDevice: id }))
         spotify.play({ device_id: id })
             .then(function () {
-                console.log('Playback paused');
+                // console.log('Change device');
             }, function (err) {
-                console.log('Something went wrong!', err);
+                console.log('Change device Error', err);
             });
     }
 

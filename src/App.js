@@ -25,13 +25,13 @@ function App() {
 
   useEffect(() => {
     if (user) {
-      dispatch(userActions.setName({ name: user.display_name }));
+      dispatch(userActions.setName({ name: user.display_name })); //set username
     }
   }, [user, dispatch]);
 
   useEffect(() => {
-    const hash = getTokenFromUrl()
-    window.location.hash = "";
+    const hash = getTokenFromUrl() //get token
+    window.location.hash = ""; //set url ""
     const _token = hash.access_token;
     if (_token) {
       //set token

@@ -4,7 +4,8 @@ import SpotifyWebApi from "spotify-web-api-node"
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
 //로그인 성공하면 여기로 redirect
-const redirectUri = "https://prater21.github.io/Spotify-Clone/";
+// const redirectUri = "https://prater21.github.io/Spotify-Clone/";
+const redirectUri = "http://localhost:3000/"
 const clientId = process.env.REACT_APP_CLIENT_ID;
 const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
 
@@ -22,6 +23,7 @@ const scopes = [
     "streaming"
 ];
 
+//get Access Token
 export const getTokenFromUrl = () => {
     return window.location.hash
         .substring(1)
@@ -36,4 +38,5 @@ export const getTokenFromUrl = () => {
 
 
 //https://developer.spotify.com/documentation/general/guides/authorization/code-flow/
+//to login spotify
 export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;
