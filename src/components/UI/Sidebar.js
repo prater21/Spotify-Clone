@@ -22,17 +22,19 @@ const Sidebar = () => {
             <br></br>
             <strong className="sidebar__title">PLAYLISTS</strong>
             <hr />
-            <ul className="sidebar__playlists">
-                {playlists?.map(playlist =>
-                    <li key={playlist.id} className="sidebar_playlist">
-                        <NavLink
-                            to={"playlist/" + playlist.id}
-                            className={({ isActive }) => (isActive ? "active" : undefined)} onClick={() => { onPlaylistTitleHandler(playlist.name) }}>
-                            {playlist.name}
-                        </NavLink>
-                    </li>
-                )}
-            </ul>
+            <div className="sidebar__main">
+                <ul className="sidebar__playlists">
+                    {playlists?.map(playlist =>
+                        <li key={playlist.id} className="sidebar_playlist">
+                            <NavLink
+                                to={"playlist/" + playlist.id}
+                                className={({ isActive }) => (isActive ? "active" : undefined)} onClick={() => { onPlaylistTitleHandler(playlist.name) }}>
+                                {playlist.name}
+                            </NavLink>
+                        </li>
+                    )}
+                </ul>
+            </div>
 
         </div >
     )

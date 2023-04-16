@@ -8,12 +8,10 @@ import Topbar from "./Topbar";
 const Layout = () => {
     return (
         <div className="layout">
-            <div className="layout__body">
-                <Sidebar />
-                <div className="layout__main">
-                    <Topbar />
-                    <Body />
-                </div>
+            <Sidebar />
+            <div className="layout__main">
+                <Topbar />
+                <Body />
             </div>
             <Footer />
         </div>

@@ -14,7 +14,8 @@ const router = createBrowserRouter(
     <Route path='/' element={<Layout />}>
       <Route path='playlist/:playlistId' element={<Playlist />} />
     </Route>
-  ), { basename: "/Spotify-Clone" }
+  )
+  , { basename: "/Spotify-Clone" }
 )
 
 

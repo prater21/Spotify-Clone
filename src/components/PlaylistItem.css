@@ -82,6 +82,10 @@
     margin: 0;
     margin-top: 2px;
     margin-bottom: 8px;
+    width: 23vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .playlist__artistName{
@@ -91,7 +95,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-     
 }
 .playlist__artistName>li{
     padding: 0;
@@ -147,4 +150,8 @@
     .playlist__titleTitle{
         width: 90%;
     }
+    .playlist__trackName p{
+    width: 100%;
+}
+
 }

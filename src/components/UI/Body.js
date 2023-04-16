@@ -5,10 +5,10 @@ import "./Body.css"
 const Body = () => {
     return (
         <div className="body">
-            <div className="body__main">
-                <Outlet />
-                <div className="body__margin"></div>
-            </div>
+            {/* <div className="body__main"> */}
+            <Outlet />
+            {/* <div className="body__margin"></div>
+            </div> */}
 
         </div>
     )

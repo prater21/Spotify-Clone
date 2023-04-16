@@ -1,5 +1,4 @@
 .body{
-    min-height: 100vh;
     background: linear-gradient(transparent, rgba(0, 0, 0, 1));
     background-color: rgb(58, 58, 58);
     position: fixed;
@@ -7,7 +6,7 @@
     left: 250px;
     top: 0px;
     overflow-y: scroll;
-    height: 100%;
+    height: calc(100% - 90px);
 }
 
 .body::-webkit-scrollbar {

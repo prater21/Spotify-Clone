@@ -1,9 +1,9 @@
 .sidebar{
-    height: 100vh;
     color: white;
     width: 250px;
     background-color: #040404;
     position: fixed;
+    height: calc(100% - 90px);
 }
 
 .sidebar__logo{
@@ -46,10 +46,30 @@
   font-size: 12px;
 }
 
+.sidebar__main{
+  overflow-y: scroll;
+  height:calc(100% - 280px);
+}
+
+.sidebar__main::-webkit-scrollbar {
+    width: 15px;
+  }
+.sidebar__main::-webkit-scrollbar-thumb {
+    background-color: #636770;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 4px solid  #040404;
+  }
+
+.sidebar__main::-webkit-scrollbar-track {
+    background-color: #040404 ;
+  }
+
+
 
 .sidebar_playlist{
   list-style: none;
-  margin: 20px 0;
+  margin: 18px 0;
 }
 
 .sidebar_playlist a{
