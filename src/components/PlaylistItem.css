@@ -120,8 +120,7 @@
     width: 5%;
 }
 
-
- @media (max-width: 1400px) {
+@media all and (max-width: 1400px) {
     .playlist__trackAddedDate,
     .playlist__titleAddedDate,
     .playlist__trackDuration,
@@ -138,7 +137,7 @@
     }
 }
 
- @media (max-width: 1000px) {
+@media all and (max-width: 1000px) {
     .playlist__trackAlbum,
     .playlist__titleAlbum{ 
         display: none;
@@ -151,7 +150,6 @@
         width: 90%;
     }
     .playlist__trackName p{
-    width: 100%;
-}
-
+        width: 100%;
+    }
 }
