@@ -1,5 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+/**
+ * sidebar component
+ */
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../store/user-slice";
 import "./Sidebar.css"
 
@@ -7,12 +10,15 @@ import "./Sidebar.css"
 const Sidebar = () => {
     const playlists = useSelector(state => state.user.playlists);
     const dispatch = useDispatch();
+
+    //set playlist title
     const onPlaylistTitleHandler = (title) => {
         dispatch(userActions.setPlaylistTitle({ playlistTitle: title }))
     }
 
     return (
         <div className="sidebar">
+            {/* sidebar nav */}
             <img className="sidebar__logo"
                 src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
                 alt="" />
@@ -20,6 +26,7 @@ const Sidebar = () => {
             <p className="sidebar__menu">Search</p>
             <p className="sidebar__menu">Library</p>
             <br></br>
+            {/* sidebar playlists */}
             <strong className="sidebar__title">PLAYLISTS</strong>
             <hr />
             <div className="sidebar__main">

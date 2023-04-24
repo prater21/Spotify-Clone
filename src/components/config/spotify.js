@@ -1,3 +1,6 @@
+/**
+ * spotify config setting
+ */
 import SpotifyWebApi from "spotify-web-api-node"
 
 //유저가 로그인 버튼 누르면 이 주소로 감   

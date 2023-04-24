@@ -1,3 +1,7 @@
+/**
+ * playlist component
+ */
+
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../store/user-slice";
@@ -12,14 +16,17 @@ const PlaylistItem = () => {
     const [imgSrc, setImgSrc] = useState("");
     const dispatch = useDispatch();
 
+    //track click
     const onTrackClickHandler = (track, index) => {
-        dispatch(userActions.setNowSong({ nowSong: track })) //set now playing song
-        dispatch(userActions.setIndex({ index: index })); //set index of song
+        //set now playing song
+        dispatch(userActions.setNowSong({ nowSong: track }))
+        //set now playing song index
+        dispatch(userActions.setIndex({ index: index }));
 
         //play song
         spotify.play({ context_uri: `spotify:playlist:${playlistId}`, offset: { position: index }, device_id: nowDevice })
             .then(function () {
-                console.log('Play song');
+                // console.log('Play song');
             }, function (err) {
                 console.log('play Error', err);
             });
@@ -51,6 +58,8 @@ const PlaylistItem = () => {
             <p className="playlist__titleDuration">시간</p>
         </div>
         <hr className="playlist__hr"></hr>
+
+        {/* playlist tracks */}
         <ul className="playlist__tracks">
             {playlist?.map((track, index) =>
                 <li key={track.id} className="playlist__track" onClick={() => { onTrackClickHandler(track.track, index) }}>
@@ -73,6 +82,5 @@ const PlaylistItem = () => {
         </ul>
     </>
 }
-
 
 export default PlaylistItem;

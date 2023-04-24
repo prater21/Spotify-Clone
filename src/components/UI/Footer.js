@@ -1,4 +1,10 @@
-import "./Footer.css"
+/**
+ * footer component
+ */
+import { useState } from "react";
+import { spotify } from "../config/spotify";
+import { useDispatch, useSelector } from "react-redux";
+import { userActions } from "../../store/user-slice";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
@@ -6,11 +12,7 @@ import VolumeUpOutlinedIcon from '@mui/icons-material/VolumeUpOutlined';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import PauseCircleOutlineIcon from "@mui/icons-material/PauseCircleOutline";
 import Slider from '@mui/material/Slider';
-import { useState } from "react";
-import { spotify } from "../config/spotify";
-import { useDispatch, useSelector } from "react-redux";
-import { userActions } from "../../store/user-slice";
-
+import "./Footer.css"
 
 const Footer = () => {
     const [playing, setPlaying] = useState(false);
@@ -20,7 +22,7 @@ const Footer = () => {
     const nowSong = useSelector(state => state.user.nowSong);
     const playlist = useSelector(state => state.user.playlist);
     const index = useSelector(state => state.user.index)
-    const avaliableDevice = useSelector(state => state.user.avaliableDevice);
+    const availableDevice = useSelector(state => state.user.availableDevice);
 
     const dispatch = useDispatch();
 
@@ -85,7 +87,7 @@ const Footer = () => {
         dispatch(userActions.setNowSong({ nowSong: playlist[_index].track }))
     }
 
-    //set device volume, but doesn't work apple device
+    //set device volume
     const volumeControlHandler = (e) => {
         setVolume(e.target.value);
         spotify.setVolume(parseInt(e.target.value))
@@ -119,6 +121,7 @@ const Footer = () => {
                     alt={nowSong?.name}
                 />
                 {nowSong ? (
+                    //now playing song
                     <div className="footer__songInfo">
                         <h4>{nowSong.name}</h4>
                         <p>{nowSong.artists.map((artist) => artist.name).join(", ")}</p>
@@ -130,9 +133,10 @@ const Footer = () => {
                     </div>
                 )}
             </div>
+
             <div className="footer__center">
                 <SkipPreviousIcon onClick={toPrevHandler} className="footer__icon" />
-                {!playing ? (
+                {playing ? (
                     <PauseCircleOutlineIcon
                         onClick={pauseHandler}
                         fontSize="large"
@@ -147,18 +151,21 @@ const Footer = () => {
                 )}
                 < SkipNextIcon className="footer__icon" onClick={toNextHandler} />
             </div>
+
             <div className="footer__right">
                 <div className="footer__volume" >
+                    {/* show available devices */}
                     <PhoneIphoneIcon
                         onClick={onPopoverHandler} />
                     <div className="footer__devices" style={!popOver ? { display: "none" } : { display: "block" }}>
-                        <p className="footer__deviceTitle">Avaliable devices</p>
+                        <p className="footer__deviceTitle">Available devices</p>
                         <hr />
-                        {avaliableDevice?.map(device =>
+                        {availableDevice?.map(device =>
                             <li className="footer__device" key={device.id} onClick={() => { deviceChangeHandler(device.id) }}>
                                 {device.name}
                             </li>)}
                     </div>
+                    {/* set volume */}
                     <VolumeUpOutlinedIcon />
                     <Slider aria-label="Volume"
                         onChange={volumeControlHandler}

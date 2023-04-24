@@ -1,3 +1,6 @@
+/**
+ * body component
+ */
 import { Outlet } from "react-router-dom";
 import "./Body.css"
 
