@@ -15,7 +15,6 @@ import Slider from '@mui/material/Slider';
 import "./Footer.css"
 
 const Footer = () => {
-    const [playing, setPlaying] = useState(false);
     const [volume, setVolume] = useState(30);
     const [popOver, setPopOver] = useState(false);
 
@@ -23,10 +22,12 @@ const Footer = () => {
     const playlist = useSelector(state => state.user.playlist);
     const index = useSelector(state => state.user.index)
     const availableDevice = useSelector(state => state.user.availableDevice);
+    const isPlaying = useSelector(state => state.user.isPlaying);
 
     const dispatch = useDispatch();
 
-    //pause handler
+
+    //pause icon click handler
     const pauseHandler = () => {
         spotify.pause()
             .then(function () {
@@ -34,10 +35,10 @@ const Footer = () => {
             }, function (err) {
                 console.log('footer pause handler Error', err);
             });
-        setPlaying(prev => { return !prev });
+        dispatch(userActions.setIsPlaying({ isPlaying: false }));
     }
 
-    //play handler
+    //play icon click handler
     const playHandler = () => {
         spotify.play()
             .then(function () {
@@ -45,7 +46,8 @@ const Footer = () => {
             }, function (err) {
                 console.log('footer play handler Error', err);
             });
-        setPlaying(prev => { return !prev });
+        dispatch(userActions.setIsPlaying({ isPlaying: true }));
+
     }
 
     //skip to previous song
@@ -65,6 +67,7 @@ const Footer = () => {
         else
             dispatch(userActions.setIndex({ index: _index }));
         dispatch(userActions.setNowSong({ nowSong: playlist[_index].track }))
+        dispatch(userActions.setIsPlaying({ isPlaying: true }));
 
     }
 
@@ -85,6 +88,7 @@ const Footer = () => {
         else
             dispatch(userActions.setIndex({ index: _index }));
         dispatch(userActions.setNowSong({ nowSong: playlist[_index].track }))
+        dispatch(userActions.setIsPlaying({ isPlaying: true }));
     }
 
     //set device volume
@@ -136,7 +140,7 @@ const Footer = () => {
 
             <div className="footer__center">
                 <SkipPreviousIcon onClick={toPrevHandler} className="footer__icon" />
-                {playing ? (
+                {isPlaying ? (
                     <PauseCircleOutlineIcon
                         onClick={pauseHandler}
                         fontSize="large"

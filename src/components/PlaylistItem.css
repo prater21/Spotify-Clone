@@ -1,155 +1,158 @@
-.playlist__top{
-    height: 280px;
-    padding: 90px 0 0px 50px;
-    display: flex;
+.playlist__top {
+  height: 280px;
+  padding: 90px 0 0px 50px;
+  display: flex;
 }
 
-.playlist__img{
-    width: 250px;
-    height: 250px;
+.playlist__img {
+  width: 250px;
+  height: 250px;
 }
 
-.playlist__description{
-    margin: auto 0 40px 20px;
-    color: white;
+.playlist__description {
+  margin: auto 0 40px 20px;
+  color: white;
 }
 
-.playlist__description p{
-    margin: 10px 0 0 0;
-    width: 300px;
+.playlist__description p {
+  margin: 10px 0 0 0;
+  width: 300px;
 }
 
-.playlist__title{
-    font-weight: bold;
-    font-size: 2rem;
+.playlist__title {
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-.playlist__border{
-    height: 30px;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-between;
-    color: rgb(152, 152, 152);
+.playlist__border {
+  height: 30px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(152, 152, 152);
 }
 
 .playlist__hr {
-    border: 1px solid #7b7b7b;
-    width: 95%;
-    margin: 10px auto;
+  border: 1px solid #7b7b7b;
+  width: 95%;
+  margin: 10px auto;
 }
 
-.playlist__trackImg{
-    width: 50px;
-    height: 50px;
+.playlist__trackImg {
+  width: 50px;
+  height: 50px;
 }
 
-.playlist__tracks{
-   padding: 0 10px;
-   color: rgb(152, 152, 152);
+.playlist__tracks {
+  padding: 0 10px;
+  color: rgb(152, 152, 152);
 }
 
-.playlist__track{
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-    padding: 10px 20px;
-    cursor: pointer;
+.playlist__track {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.playlist__track:hover{
-    background-color: #7b7b7b;
-    color: white;
+.playlist__track:hover {
+  background-color: #7b7b7b;
+  color: white;
 }
 
 .playlist__trackNumber,
-.playlist__titleIcon{
-    width: 20px;
-    margin-left: 20px;
-    margin-right: 30px;
+.playlist__titleIcon {
+  width: 20px;
+  margin-left: 20px;
+  margin-right: 30px;
 }
 
 .playlist__trackTitle,
-.playlist__titleTitle{
-    display: flex;
-    width: 35%;
+.playlist__titleTitle {
+  display: flex;
+  width: 35%;
 }
 
-.playlist__trackName{
-    margin: 0 10px;
-    height: 50px;
+.playlist__trackName {
+  margin: 0 10px;
+  height: 50px;
 }
-.playlist__trackName p{
-    margin: 0;
-    margin-top: 2px;
-    margin-bottom: 8px;
-    width: 23vw;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.playlist__artistName{
-    list-style: none;
-    padding: 0;
-    width: 23vw;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.playlist__artistName>li{
-    padding: 0;
-    display: inline;
+.playlist__trackName p {
+  margin: 0;
+  margin-top: 2px;
+  margin-bottom: 8px;
+  width: 23vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.playlist__artistName li:not(:last-child):after {  
-    content: ", ";
+.playlist__artistName {
+  list-style: none;
+  padding: 0;
+  width: 23vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.playlist__artistName > li {
+  padding: 0;
+  display: inline;
 }
 
-.playlist__trackAlbum,
-.playlist__titleAlbum{
-    width: 30%;
+.playlist__artistName li:not(:last-child):after {
+  content: ", ";
+}
+
+.playlist__titleAlbum {
+  width: 30%;
+}
+
+.playlist__trackAlbum {
+  width: 30%;
+  margin: auto 0;
 }
 
 .playlist__trackAddedDate,
-.playlist__titleAddedDate{
-    width: 15%;
-
+.playlist__titleAddedDate {
+  width: 15%;
 }
 .playlist__trackDuration,
-.playlist__titleDuration{
-    width: 5%;
+.playlist__titleDuration {
+  width: 5%;
 }
 
 @media all and (max-width: 1400px) {
-    .playlist__trackAddedDate,
-    .playlist__titleAddedDate,
-    .playlist__trackDuration,
-    .playlist__titleDuration  {
-        display: none;
-    }
-    .playlist__trackTitle,
-    .playlist__titleTitle{
-        width: 50%;
-    }
-    .playlist__trackAlbum,
-    .playlist__titleAlbum{
-        width: 45%;
-    }
+  .playlist__trackAddedDate,
+  .playlist__titleAddedDate,
+  .playlist__trackDuration,
+  .playlist__titleDuration {
+    display: none;
+  }
+  .playlist__trackTitle,
+  .playlist__titleTitle {
+    width: 50%;
+  }
+  .playlist__trackAlbum,
+  .playlist__titleAlbum {
+    width: 45%;
+  }
 }
 
 @media all and (max-width: 1000px) {
-    .playlist__trackAlbum,
-    .playlist__titleAlbum{ 
-        display: none;
-    }
-    .playlist__artistName{
-        width: 45vw;
-    }
-    .playlist__trackTitle,
-    .playlist__titleTitle{
-        width: 90%;
-    }
-    .playlist__trackName p{
-        width: 100%;
-    }
+  .playlist__trackAlbum,
+  .playlist__titleAlbum {
+    display: none;
+  }
+  .playlist__artistName {
+    width: 45vw;
+  }
+  .playlist__trackTitle,
+  .playlist__titleTitle {
+    width: 90%;
+  }
+  .playlist__trackName p {
+    width: 100%;
+  }
 }

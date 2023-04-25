@@ -22,10 +22,7 @@ const Sidebar = () => {
             <img className="sidebar__logo"
                 src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
                 alt="" />
-            <p className="sidebar__menu">Home</p>
-            <p className="sidebar__menu">Search</p>
-            <p className="sidebar__menu">Library</p>
-            <br></br>
+
             {/* sidebar playlists */}
             <strong className="sidebar__title">PLAYLISTS</strong>
             <hr />

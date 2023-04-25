@@ -13,6 +13,7 @@ const PlaylistItem = () => {
     const playlistTitle = useSelector(state => state.user.playlistTitle);
     const nowDevice = useSelector(state => state.user.nowDevice)
     const playlistId = useSelector(state => state.user.playlistId)
+
     const [imgSrc, setImgSrc] = useState("");
     const dispatch = useDispatch();
 
@@ -22,6 +23,8 @@ const PlaylistItem = () => {
         dispatch(userActions.setNowSong({ nowSong: track }))
         //set now playing song index
         dispatch(userActions.setIndex({ index: index }));
+        //set isPlaying true
+        dispatch(userActions.setIsPlaying({ isPlaying: true }));
 
         //play song
         spotify.play({ context_uri: `spotify:playlist:${playlistId}`, offset: { position: index }, device_id: nowDevice })

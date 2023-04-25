@@ -1,29 +1,30 @@
-.body{
-    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
-    background-color: rgb(58, 58, 58);
-    position: fixed;
-    width: calc(100% - 250px);
-    left: 250px;
-    top: 0px;
-    overflow-y: scroll;
-    height: calc(100% - 90px);
+.body {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+  background-color: rgb(58, 58, 58);
+  position: fixed;
+  width: calc(100% - 250px);
+  left: 250px;
+  top: 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: calc(100% - 90px);
 }
 
 .body::-webkit-scrollbar {
-    width: 15px;
-  }
+  width: 15px;
+}
 .body::-webkit-scrollbar-thumb {
-    background-color: #636770;
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 4px solid rgb(34, 34, 34);
-  }
+  background-color: #636770;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 4px solid rgb(34, 34, 34);
+}
 
 .body::-webkit-scrollbar-track {
-    background-color: rgb(34, 34, 34) ;
-  }
+  background-color: rgb(34, 34, 34);
+}
 
-  .body__margin{
-    color: aliceblue;
-    height: 100px;
-  }
+.body__margin {
+  color: aliceblue;
+  height: 100px;
+}

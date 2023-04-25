@@ -19,6 +19,7 @@ const userSlice = createSlice({
         nowDevice: null,
         nowSong: null,
         index: 0,
+        isPlaying: false
     },
     reducers: {
         //set user name
@@ -64,6 +65,10 @@ const userSlice = createSlice({
         //set now playing song index
         setIndex(state, action) {
             state.index = action.payload.index;
+        },
+        //set now playing song index
+        setIsPlaying(state, action) {
+            state.isPlaying = action.payload.isPlaying;
         }
     }
 });
