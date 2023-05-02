@@ -19,11 +19,10 @@ const PlaylistItem = () => {
 
     //track click
     const onTrackClickHandler = (track, index) => {
-        //set now playing song
+
         dispatch(userActions.setNowSong({ nowSong: track }))
-        //set now playing song index
+        //set song index
         dispatch(userActions.setIndex({ index: index }));
-        //set isPlaying true
         dispatch(userActions.setIsPlaying({ isPlaying: true }));
 
         //play song

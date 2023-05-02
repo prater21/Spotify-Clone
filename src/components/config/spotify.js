@@ -7,8 +7,8 @@ import SpotifyWebApi from "spotify-web-api-node"
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
 //로그인 성공하면 여기로 redirect
-const redirectUri = "http://localhost:3000/Spotify-Clone/"
-// const redirectUri = "https://prater21.github.io/Spotify-Clone/";
+// const redirectUri = "http://localhost:3000/Spotify-Clone/"
+const redirectUri = "https://prater21.github.io/Spotify-Clone/";
 const clientId = process.env.REACT_APP_CLIENT_ID;
 const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
 
