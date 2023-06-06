@@ -1,7 +1,6 @@
 /**
  * login page
  */
-
 import { loginUrl } from "../config/spotify";
 import "./Login.css"
 

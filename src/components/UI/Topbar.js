@@ -1,7 +1,6 @@
 /**
  * topbar component
  */
-
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';

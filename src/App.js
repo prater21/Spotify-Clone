@@ -31,9 +31,11 @@ function App() {
     }
   }, [user, dispatch]);
 
+  
   useEffect(() => {
     //get token
     const hash = getTokenFromUrl();
+    
     //set url ""
     window.location.hash = "";
     const _token = hash.access_token;
@@ -56,22 +58,25 @@ function App() {
         }, function (err) {
           console.log('Something went wrong!', err);
         });
+      
       //get user playlist
       spotify.getUserPlaylists()
         .then(data => {
           dispatch(userActions.setPlaylists({ playlists: data.body.items }));
         })
+      
       //set shuffle false
       spotify.setShuffle(false)
         .then(function () {
-          console.log('Shuffle is off.');
+          // console.log('Shuffle is off.');
         }, function (err) {
           console.log('Something went wrong!', err);
         });
+      
       //set repeat context
       spotify.setRepeat('context')
         .then(function () {
-          console.log('Repeat context.');
+          // console.log('Repeat context.');
         }, function (err) {
           console.log('Something went wrong!', err);
         });

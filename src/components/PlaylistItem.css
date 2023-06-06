@@ -53,12 +53,12 @@
   justify-content: space-between;
   height: 50px;
   padding: 10px 20px;
-  cursor: pointer;
 }
 
 .playlist__track:hover {
   background-color: #7b7b7b;
   color: white;
+  cursor: pointer;
 }
 
 .playlist__trackNumber,
@@ -78,6 +78,7 @@
   margin: 0 10px;
   height: 50px;
 }
+
 .playlist__trackName p {
   margin: 0;
   margin-top: 2px;
@@ -96,6 +97,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .playlist__artistName > li {
   padding: 0;
   display: inline;
@@ -118,6 +120,7 @@
 .playlist__titleAddedDate {
   width: 15%;
 }
+
 .playlist__trackDuration,
 .playlist__titleDuration {
   width: 5%;
@@ -130,10 +133,12 @@
   .playlist__titleDuration {
     display: none;
   }
+
   .playlist__trackTitle,
   .playlist__titleTitle {
     width: 50%;
   }
+
   .playlist__trackAlbum,
   .playlist__titleAlbum {
     width: 45%;
@@ -145,13 +150,16 @@
   .playlist__titleAlbum {
     display: none;
   }
+
   .playlist__artistName {
     width: 45vw;
   }
+
   .playlist__trackTitle,
   .playlist__titleTitle {
     width: 90%;
   }
+
   .playlist__trackName p {
     width: 100%;
   }

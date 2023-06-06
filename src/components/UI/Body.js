@@ -4,7 +4,6 @@
 import { Outlet } from "react-router-dom";
 import "./Body.css"
 
-
 const Body = () => {
     return (
         <div className="body">

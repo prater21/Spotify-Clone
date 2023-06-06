@@ -42,7 +42,6 @@ const PlaylistItem = () => {
         }
     }, [playlist]);
 
-
     return <>
         <div className="playlist__top" >
             <img className="playlist__img" alt="playlist top img" src={imgSrc} />

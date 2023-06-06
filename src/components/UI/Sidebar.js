@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../store/user-slice";
 import "./Sidebar.css"
 
-
 const Sidebar = () => {
     const playlists = useSelector(state => state.user.playlists);
     const dispatch = useDispatch();

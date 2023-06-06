@@ -26,7 +26,6 @@ const Footer = () => {
 
     const dispatch = useDispatch();
 
-
     //pause icon click handler
     const pauseHandler = () => {
         spotify.pause()
@@ -101,10 +100,12 @@ const Footer = () => {
                 console.log('Setting volume Error', err);
             });
     }
+    
     //show available devices
     const onPopoverHandler = () => {
         setPopOver(prev => { return !prev });
     }
+
     //change device handler
     const deviceChangeHandler = (id) => {
         dispatch(userActions.setNowDevice({ nowDevice: id }))
@@ -160,7 +161,9 @@ const Footer = () => {
                 <div className="footer__volume" >
                     {/* show available devices */}
                     <PhoneIphoneIcon
-                        onClick={onPopoverHandler} />
+                        onClick={onPopoverHandler}
+                        style={{ cursor: "pointer" }}
+                    />
                     <div className="footer__devices" style={!popOver ? { display: "none" } : { display: "block" }}>
                         <p className="footer__deviceTitle">Available devices</p>
                         <hr />
