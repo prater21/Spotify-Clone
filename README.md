@@ -1,19 +1,21 @@
 # React Spotify Clone
 
-A Spotify Clone App using React and Redux
+A Spotify Clone App using React
 
 ### >>[Live Demo](https://prater21.github.io/Spotify-Clone/)
 ![ezgif com-video-to-gif (3)](https://user-images.githubusercontent.com/126800695/229820190-ac5d1b78-ef53-46b6-9669-168169f67c60.gif)
 
 ## Built with
 
-- React · Redux
+- React
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 - [spotify-web-api-node](https://github.com/thelinmichael/spotify-web-api-node)
+- [MUI](https://mui.com/material-ui/icons/)
 
 ## Features
 
 - User's Playlist
-- Play, Pause
+- Song Play, Pause
 - Skip to Next, Previous Track
 - Set Volume
 
