@@ -10,7 +10,7 @@ A Spotify Clone App using React
 - React
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [spotify-web-api-node](https://github.com/thelinmichael/spotify-web-api-node)
-- [MUI](https://mui.com/material-ui/icons/)
+- [MUI icons](https://mui.com/material-ui/icons/)
 
 ## Features
 
