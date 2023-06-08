@@ -18,6 +18,7 @@ A Spotify Clone App using React
 - Song Play, Pause
 - Skip to Next, Previous Track
 - Set Volume
+- Available devices, select a device
 
 ## Setup
 
