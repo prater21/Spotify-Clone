@@ -3,7 +3,8 @@
 A Spotify Clone App using React
 
 ### >>[Live Demo](https://prater21.github.io/Spotify-Clone/)
-![ezgif com-video-to-gif (3)](https://user-images.githubusercontent.com/126800695/229820190-ac5d1b78-ef53-46b6-9669-168169f67c60.gif)
+
+<img width="60%" alt="image (4)" src="https://github.com/prater21/Spotify-Clone/assets/126800695/bb3d351b-4f58-4133-ac06-9d7bcbc77798">
 
 ## Built with
 
